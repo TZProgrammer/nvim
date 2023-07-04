@@ -13,6 +13,11 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use {
+	  'nvim-telescope/telescope-file-browser.nvim',
+	  requires = { 'nvim-lua/plenary.nvim', 'nvim-lua/plenary.nvim' }
+  }
+
   use({
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
@@ -45,6 +50,7 @@ return require('packer').startup(function(use)
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
   use("nvim-treesitter/nvim-treesitter-context");
+  use("easymotion/vim-easymotion")
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -73,6 +79,7 @@ return require('packer').startup(function(use)
   use("github/copilot.vim")
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
+  use("alexghergh/nvim-tmux-navigation")
 
 end)
 
