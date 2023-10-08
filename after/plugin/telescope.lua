@@ -6,9 +6,6 @@ vim.keymap.set('n', '<leader>fd', function() builtin.find_files({hidden = true, 
 vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
 
 
-vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
-
-
 -- Grep search
 vim.keymap.set('n', '<leader>gf', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
@@ -20,3 +17,7 @@ vim.keymap.set('n', '<leader>gt', builtin.grep_string, {})
 vim.keymap.set('n', '<leader>gd', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") , search_dirs = {vim.fn.input("Directory > ")}})
 end)
+
+
+-- Other
+vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
