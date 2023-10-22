@@ -89,5 +89,5 @@ vim.keymap.set("n", "<leader>pyv", function()
 end)
 
 vim.keymap.set("n", "<leader>pyh", function()
-    vim.cmd("hsplit | term python3 %")
+    vim.cmd("split | term python3 %")
 end)
