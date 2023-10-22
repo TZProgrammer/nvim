@@ -83,3 +83,11 @@ end)
 
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
 
+-- Custom commands
+vim.keymap.set("n", "<leader>pyv", function()
+    vim.cmd("vsplit | term python3 %")
+end)
+
+vim.keymap.set("n", "<leader>pyh", function()
+    vim.cmd("hsplit | term python3 %")
+end)
