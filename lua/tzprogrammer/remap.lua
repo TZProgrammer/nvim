@@ -47,7 +47,8 @@ end)
 vim.keymap.set("n", "<leader>o", "o<Esc>")
 vim.keymap.set("n", "<leader>O", "O<Esc>")
 vim.keymap.set("n", "<leader>[", "$a {\n}<Esc>ko")
-vim.keymap.set("n", "<leader>;", "$a;<Esc>")
+vim.keymap.set("n", "<leader>;", "$a;<Esc>o")
+vim.keymap.set("n", "<leader>:", "$a:<Esc>o")
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -82,3 +83,11 @@ end)
 
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
 
+-- Custom commands
+vim.keymap.set("n", "<leader>pyv", function()
+    vim.cmd("vsplit | term python3 %")
+end)
+
+vim.keymap.set("n", "<leader>pyh", function()
+    vim.cmd("split | term python3 %")
+end)
