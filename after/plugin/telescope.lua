@@ -39,7 +39,10 @@ end)
 
 
 -- File Browser
-vim.keymap.set('n', '<leader>pv', function()
+vim.keymap.set('n', '<leader>pvc', function()
+	file_browser.file_browser({hidden = true, path="%:p:h"})
+end)
+vim.keymap.set('n', '<leader>pvr', function()
 	file_browser.file_browser({hidden = true})
 end)
 
