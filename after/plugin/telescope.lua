@@ -1,5 +1,6 @@
 local builtin = require('telescope.builtin')
 local harpoon_telescope = require("telescope").load_extension('harpoon')
+local file_browser = require("telescope").load_extension('file_browser')
 
 
 -- File search
@@ -38,7 +39,9 @@ end)
 
 
 -- File Browser
-vim.keymap.set('n', '<leader>pv', ":Telescope file_browser<CR>", {})
+vim.keymap.set('n', '<leader>pv', function()
+	file_browser.file_browser({hidden = true})
+end)
 
 -- Other
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
