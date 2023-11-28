@@ -37,5 +37,8 @@ vim.keymap.set('n', '<leader>lgd', function()
 end)
 
 
+-- File Browser
+vim.keymap.set('n', '<leader>pv', ":Telescope file_browser<CR>", {})
+
 -- Other
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
