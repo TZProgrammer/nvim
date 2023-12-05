@@ -111,4 +111,4 @@ vim.keymap.set("n", "<leader>pyh", function()
     vim.cmd("split | term python3 %")
 end)
 
-vim.keymap.set("t", "<esc><esc>", "<C-\\><C-N>", {silent = true})
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-N>", {silent = true})
