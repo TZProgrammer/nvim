@@ -10,11 +10,11 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("n", "gs", function() vim.lsp.buf.signature_help() end, opts)
   vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+  vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
   vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
   vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
 end)
 
 require('mason').setup({})
@@ -34,11 +34,15 @@ require('mason-lspconfig').setup({
     clangd = function()
         local cmp_nvim_lsp = require "cmp_nvim_lsp"
         require("lspconfig").clangd.setup {
+            init_options = {
+                compilationDatabasePath="./build",
+            },
             capabilities = cmp_nvim_lsp.default_capabilities(),
             cmd = {
                 "clangd",
                 "--offset-encoding=utf-16",
             },
+            root_dir = require('lspconfig.util').root_pattern('.git')
         }
     end,
   }
