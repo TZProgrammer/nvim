@@ -23,7 +23,21 @@ end)
 -- vim.keymap.set('n', '<leader>gh', function()
 -- 	builtin.grep_string({ search = vim.fn.input("Grep > ") , search_dirs = harpoon_telescope.marks()})
 -- end)
-vim.keymap.set('n', '<leader>gt', builtin.grep_string, {})
+vim.keymap.set('n', '<leader>gw', function()
+    builtin.grep_string({search = vim.fn.expand("<cword>"), search_dirs = builtin.git_files()})
+end)
+vim.keymap.set('n', '<leader>gW', function()
+    builtin.grep_string({search = vim.fn.expand("<cWORD>"), search_dirs = builtin.git_files()})
+end)
+
+function _G.get_visual_selection()
+    vim.cmd "normal! \"zy"
+    local selection = vim.fn.getreg('z')
+    return selection
+end
+vim.keymap.set('v', '<leader>gt', function()
+    builtin.grep_string({ search = get_visual_selection(), search_dirs = builtin.git_files() })
+end, { noremap = true, silent = true })
 
 
 -- Live Grep search
