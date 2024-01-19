@@ -115,3 +115,5 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-N>", {silent = true})
 
 -- Git
 vim.keymap.set("n", "<leader>ga", ":G add %<CR>");
+vim.keymap.set("n", "<leader>cm", ":G commit -m \"\"<Left>", opts);
+vim.keymap.set("n", "<leader>ca", ":G commit --amend<CR>", opts);
