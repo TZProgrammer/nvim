@@ -24,7 +24,5 @@ autocmd("BufWinEnter", {
         -- NOTE: It allows me to easily set the branch i am pushing and any tracking
         -- needed if i did not set the branch up correctly
         vim.keymap.set("n", "<leader>t", ":G push -u origin ", opts);
-        vim.keymap.set("n", "<leader>cm", ":G commit -m \"\"<Left>", opts);
-        vim.keymap.set("n", "<leader>ca", ":G commit --amend<CR>", opts);
     end,
 })
