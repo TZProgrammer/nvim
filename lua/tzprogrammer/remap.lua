@@ -115,7 +115,7 @@ end, opts)
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-N>", opts)
 
-vim.keymap.set("n", "<leader>;", "q:", opts)
+vim.keymap.set("n", "<leader>;", "q:i", opts)
 
 -- Git
 vim.keymap.set("n", "<leader>ga", ":G add %<CR>", opts)
