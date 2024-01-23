@@ -118,6 +118,6 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-N>", opts)
 vim.keymap.set("n", "<leader>;", "q:i", opts)
 
 -- Git
-vim.keymap.set("n", "<leader>ga", ":G add %<CR>", opts)
-vim.keymap.set("n", "<leader>gcm", ":G commit -m \"\"<Left>", opts)
-vim.keymap.set("n", "<leader>gca", ":G commit --amend<CR>", opts)
+vim.keymap.set("n", "<leader>ga", ":G add %<CR>", {noremap = true})
+vim.keymap.set("n", "<leader>gcm", ":G commit -m \"\"<Left>", {noremap = true})
+vim.keymap.set("n", "<leader>gca", ":G commit --amend<CR>", {noremap = true})
